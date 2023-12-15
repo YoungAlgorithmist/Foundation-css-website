@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Chart Changing Request Form</title>
+    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+<body>
+    <div class="form-container">
+        <div class="container">
+            <header class = "header1">Chart Changing Request Form</header>
+            <form id="chartForm">
+                <div class="input-field">
+                    <input type="text" id="userName" required>
+                    <label>User Name</label>
+                </div>
+                <div class="input-field">
+                    <input type="number" id="formNumber" required>
+                    <label>Form Number</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" id="changeRequest" required>
+                    <label>Change Request</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" id="changeReason" required>
+                    <label>Change Reason</label>
+                </div>
+                <div class="button">
+                    <div class="inner"></div>
+                    <button type="button" onclick="submitChartRequest()">Submit Request</button>
+                </div>
+            </form>
+            <div class="auth">
+                Or login with
+            </div>
+            <div class="links">
+                <div class="facebook">
+                    <i class="fab fa-facebook-square"><span>Facebook</span></i>
+                </div>
+                <div class="google">
+                    <i class="fab fa-google-plus-square"><span>Google</span></i>
+                </div>
+            </div>
+            <div class="signup">
+                Not a member? <a href="#">Signup now</a>
+            </div>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+        google.charts.load('current', {
+            'packages': ['corechart']
+        });
+
+        function submitChartRequest() {
+            var userName = document.getElementById('userName').value;
+            var formNumber = parseInt(document.getElementById('formNumber').value);
+            var changeRequest = document.getElementById('changeRequest').value;
+            var changeReason = document.getElementById('changeReason').value;
+            console.log('User Name:', userName);
+            console.log('Form Number:', formNumber);
+            console.log('Change Request:', changeRequest);
+            console.log('Change Reason:', changeReason);
+
+            document.getElementById('chartForm').reset();
+        }
+    </script>
+</body>
+
+</html>
